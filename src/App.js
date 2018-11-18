@@ -1,25 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+
+      developer: [
+        {
+          id: 1,
+          nama: 'Edi Santoso',
+        },
+
+        {
+          id: 2,
+          nama: 'Suranta Petrus',
+        },
+
+        {
+          id: 3,
+          nama: 'Abrar Chandra',
+        }
+      ]
+
+    }
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        {
+          this.state.developer.map((dinamis, Key) =>
+            <div>
+              <h3>{dinamis.id} {dinamis.nama}</h3>
+
+            </div>
+
+          )
+        }
       </div>
     );
   }
